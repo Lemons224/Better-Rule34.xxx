@@ -1,0 +1,248 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+
+@-moz-document url-prefix("http://rule34.xxx/index.php?page=post&s=view&id="){
+  
+  div.space { display: table-caption; } 
+  div#stats { display: table-header-group; }
+  div#post-view div.sidebar div:nth-last-child(6) { display: table-footer-group; }
+
+  div#post-view div.sidebar div:nth-last-child(2) {
+    margin-top: 1em !important;
+  } 
+  div#post-view div.sidebar div:nth-last-child(3) {
+    margin-top: 1em !important;
+  }
+  div.sidebar div ul#tag-sidebar {
+    margin-top: 1em;
+  }
+  div.sidebar div ul {
+    margin-bottom: 0em;
+  }
+  
+  /* Moves over the word "date:" so that the date and time fit niecly on one line */
+  div#stats ul li:nth-child(2)  {
+    text-indent: -53px;
+    overflow: hidden;
+    text-overflow: clip;
+  }  
+}
+
+@-moz-document domain("rule34.xxx") {
+  
+  div#content div#post-list div.content {
+    height: 1400px;
+  }
+  
+  img#image {
+    max-width: 100%;
+    max-height: 680px;
+    width: auto;
+    height: auto;
+  }
+  
+  /* resizes WEBMs...this mostly helps with very tall or sqaure videos */
+  
+  div#right-col.content div video#gelcomVideoPlayer {
+    max-height: 680px;
+    width: auto !important;
+  }
+  
+  /* removes bottom ads */
+  
+  div#bottom.block01 { display: none; }
+  div.content center { display: none; }
+  html body div#header div.tips { display: none; }
+  
+  /*-------------
+  |   TOP MENU   |
+  --------------*/
+  
+  h2#site-title {
+    float: left;
+    padding-top: 1px !important;
+  }
+  
+  html body div#header ul#subnavbar.flat-list {
+    padding-left: 134px;
+  }
+  
+  /* Code below HIDES unwanted buttons on topmost navbar */
+  
+  ul#navbar.flat-list li:nth-child(3) { display: none; }   /* Comments */ 
+  ul#navbar.flat-list li:nth-child(9) { display: none; }   /* Chat */
+  ul#navbar.flat-list li:nth-child(10) { display: none; }  /* Hides Stats */
+  ul#navbar.flat-list li:nth-child(11) { display: none; }  /* iCame Top 100 */
+  ul#navbar.flat-list li:nth-child(12) { display: none; }  /* Help */
+  
+  /*-----------------
+  |   POST SIDEBAR  |
+  -----------------*/
+   
+  div.sidebar div small { visibility: hidden; }
+  div.sidebar div.space small { visibility: hidden; }
+  
+  ul#tag-sidebar { white-space: nowrap; }
+  
+  /* removes the headers of each section, they're just clutter */
+  div.sidebar h5 { display: none; }
+  
+  div#post-view div.sidebar div:nth-child(4) { display: none !important; } /* Removes Cum On This from the sidebar */
+  div#post-view div.sidebar div:nth-child(8) { display: none !important; } /* Removes Related Posts from the sidebar */
+  
+  div#post-view div.sidebar div:nth-child(5) { word-break: break-all }
+  
+  /* EDIT FORM */
+  
+  form#edit_form table tbody tr td input#source { width: 714px; }
+  form#edit_form table tbody tr:nth-child(1) br { display: none; }
+  form#edit_form table tbody tr:nth-child(2) { display: none; }
+  form#edit_form table tbody tr:nth-child(3) { display: none; }
+  form#edit_form table tbody tr:nth-child(4) { display: none; }
+  form#edit_form table tbody tr:nth-child(5) { display: none; }
+  form#edit_form table tbody tr:nth-child(6) br { display: none; }
+  
+  form#edit_form table tbody tr td div#my-tags {
+    width: 800px;
+    font-family: monospace;
+    font-size: 1.2em;
+  }
+  
+  form#edit_form table tbody tr td div#my-tags {
+    background-image: -webkit-linear-gradient(rgba(255,0,0,0), rgb(159, 213, 159) 50%);
+    background-image: linear-gradient(rgba(255,0,0,0) 50%, rgb(159, 213, 159) 50%);
+    background-size: 100% 2.3em; 
+  }
+  
+  /* Match the edit form width on the options page to the edit form width of the image post page */
+  
+  div#user-edit form table.form tbody tr:nth-child(4) td textarea {
+    width: 802px;
+    height: 200px;
+  }
+  
+}
+
+  /*----------------
+  |   POSTS PAGES  |
+  ----------------*/
+
+@-moz-document url-prefix("http://rule34.xxx/index.php?page=post"){
+  
+  /* This code puts the source section on top, makes it easier when looking for dupes to have this info at the top of the page */
+  
+  div.sidebar {
+    position: relative;
+    top: -61px;
+  }
+  
+  div.sidebar {          
+    display: table;
+    table-layout:fixed;
+    width:100%;
+  }
+ 
+  h2#site-title {
+    float: left;
+    padding-top: 1px !important;
+    padding-left: 210px !important;
+    background-image: none !important;
+    padding: 12px 5px 0px 5px !important;
+    background-color: #aae5a3;
+    margin-left: 200px;
+  }
+  
+  html body div#header ul#subnavbar.flat-list {
+    padding-left: 304px;
+  }
+  
+  div.sidebar div form div input#tags {
+    width: 12em !important;
+    margin-bottom: .3em;    
+  }
+  div.sidebar div.space form input#stags {  
+    width: 12em;
+    margin-bottom: .3em;
+  }
+  div.sidebar div form div input[name="commit"] {  width: 170px !important; }
+  div.sidebar div.space form input[name="commit"] {  width: 170px !important; }
+    
+  div.sidebar {
+    width: 180px;
+  }
+  
+  /* this code HIDES unwanted buttons from the subnavbar ON THE POST LIST */
+  
+  @-moz-document url-prefix("http://rule34.xxx/index.php?page=post&s=list&tags"){
+  
+  html body div#header ul#subnavbar.flat-list li:nth-child(1) { display: none; } /* list */
+  html body div#header ul#subnavbar.flat-list li:nth-child(5) { display: none; } /* random */
+  html body div#header ul#subnavbar.flat-list li:nth-child(6) { display: none; } /* contact us */
+  html body div#header ul#subnavbar.flat-list li:nth-child(7) { display: none; } /* about */
+  html body div#header ul#subnavbar.flat-list li:nth-child(8) { display: none; } /* help */
+  
+  }
+  
+  /* this code HIDES unwanted buttons from the subnavbar ON THE POST LIST */
+  
+  @-moz-document url-prefix("http://rule34.xxx/index.php?page=post&s=view&id"){
+  
+  html body div#header ul#subnavbar.flat-list li:nth-child(1) { display: none; } /* list */
+  html body div#header ul#subnavbar.flat-list li:nth-child(4) { display: none; } /* random */
+  html body div#header ul#subnavbar.flat-list li:nth-child(5) { display: none; } /* contact us */
+  html body div#header ul#subnavbar.flat-list li:nth-child(6) { display: none; } /* about */
+  html body div#header ul#subnavbar.flat-list li:nth-child(7) { display: none; } /* help */
+  
+  }
+  
+  div#post-view div.sidebar div:nth-last-child(3) ul li:nth-last-child(7) { display: none; }
+  div#post-view div.sidebar div:nth-last-child(3) ul li:nth-last-child(6) { display: none; }  
+  div#post-view div.sidebar div:nth-last-child(3) ul li:nth-last-child(5) { display: none; }  
+  div#post-view div.sidebar div:nth-last-child(3) ul li:nth-last-child(4) { display: none; }
+  div#post-view div.sidebar div:nth-last-child(3) ul li:nth-last-child(2) { display: none; }
+
+  div#post-view div.sidebar div ul li div#pfd a[onclick*="pflag"] {
+    float: left;
+    visibility: visible !important;
+    width: 20px;
+    height: 20px;
+    font-size: 1px;
+    color: rgb(170, 229, 163) !important;
+    margin-right: 5px !important;
+    filter: grayscale(100%);
+    background: url("https://s19.postimg.org/fibmvqwc3/Delete.png");
+  }
+  
+  div#post-view div.sidebar div ul li div#pfd a {
+    float: left;
+    visibility: visible !important;
+    width: 20px;
+    height: 20px;
+    font-size: 1px;
+    color: rgb(170, 229, 163) !important;
+    margin-right: 5px !important;
+    background: url("https://s19.postimg.org/fibmvqwc3/Delete.png");
+  }
+  
+  div#post-view div.sidebar div:nth-last-child(3) ul li:nth-last-child(1) a {
+    float: left;
+    width: 20px;
+    height: 20px;
+    font-size: 1px;
+    color: rgb(170, 229, 163) !important;
+    margin-right: 5px !important;
+    background: url("https://s19.postimg.org/fjlkp5y5v/Favorite.png");
+  }
+  
+  div#post-view div.sidebar div:nth-last-child(2) ul li:nth-child(1) a {
+    float: left;
+    width: 20px;
+    height: 20px;
+    font-size: 1px;
+    color: rgb(170, 229, 163) !important;
+    margin-right: 5px !important;
+    background: url("https://s19.postimg.org/gaeauy0j7/Tag_History.png");
+  }
+  
+  div#post-view div.sidebar div:nth-child(7) ul li:nth-child(2) { display: none; }
+
+}
